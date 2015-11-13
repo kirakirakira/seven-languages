@@ -42,20 +42,14 @@
 
 # Convert nested structure of hashes to nested arrays
 
-def ihash(h)
-  n_a = [];
-  h.each_pair do |k,v|
-    if v.is_a?(Hash)
-      puts "key: #{k} recursing..."
-      ihash(v)
-    else
-      # MODIFY HERE! Look for what you want to find in the hash here
-      print k
-      n_a.push(k)
-      puts "key: #{k} value: #{v}"
-    end
+
+def grab_children(father)
+  local_list = []
+  father.each_pair do |key, value| 
+    local_list.push(key)
+    local_list.push(grab_children(value))
   end
-  print n_a
+  return local_list
 end
 
-print ihash({'grandpa' => {'dad' => {'child 1' => {}, 'child 2' => {} }, 'uncle' => {'child 3' => {}, 'child 4' => {} } } })
+print grab_children({'grandpa' => {'dad' => {'child 1' => {}, 'child 2' => {} }, 'uncle' => {'child 3' => {}, 'child 4' => {} } } })
