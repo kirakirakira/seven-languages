@@ -10,3 +10,6 @@ text.each_line do |line|
 	end
 end
 print "\n"
+
+
+# line.include?(phrase)

@@ -1,44 +1,44 @@
-# # Translate hashes to arrays
+# Translate hashes to arrays
 
-# h = { "c" => 300, "a" => 100, "d" => 400, "c" => 300  }
+h = { "c" => 300, "a" => 100, "d" => 400, "c" => 300 }
 
-# h_array = h.to_a #=> [["c", 300], ["a", 100], ["d", 400]]
+h_array = h.to_a #=> [["c", 300], ["a", 100], ["d", 400]]
 
-# puts h_array
+puts h_array
 
-# # Translate arrays to hashes
+# Translate arrays to hashes
 
-# h = [["c", 300], ["a", 100], ["d", 400]]
+h = [["c", 300], ["a", 100], ["d", 400]]
 
-# h_hash = h.to_h
+h_hash = h.to_h
 
-# puts h_hash
+puts h_hash
 
-# # Iterate through a hashes
+# Iterate through a hashes
 
-# h = { "c" => 300, "a" => 100, "d" => 400 }
+h = { "c" => 300, "a" => 100, "d" => 400 }
 
-# h.each_key {|key| puts key}
+h.each_key {|key| puts key}
 
-# h.each_value {|value| puts value}
+h.each_value {|value| puts value}
 
-# h.each_pair {|key, value| puts key, value}
+h.each_pair {|key, value| puts key, value}
 
 # Print the contents of an array of 16 numbers, four numbers at a time, using just each
 
-# b = (1..16).to_a
+b = (2..17).to_a
 
-# b.each do |i|
-# 	if i % 4 > 0
-# 		print i.to_s + ","
-# 	else
-# 		print i.to_s + "\n"
-# 	end
-# end
+b.each_with_index do |num, index|
+	if index % 4 > 0
+		print num.to_s + ","
+	else
+		print num.to_s + "\n"
+	end
+end
 
-# # Using each_slice
+# Using each_slice
 
-# (1..16).each_slice(4) {|a| p a}
+(1..16).each_slice(4) {|a| p a}
 
 # Convert nested structure of hashes to nested arrays
 
