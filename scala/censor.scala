@@ -1,5 +1,10 @@
 // Write a Censor trait with a method that will replace the curse words Shoot and Darn with Pucky and Beans alternatives. Use a map to store the curse words and their alternatives.
 
+import scala.io.Source
+
+val filename = "fileopen.scala"
+val lines = Source.fromFile(filename).getLines.mkString
+
 val niceWords = Map("Shoot" -> "Pucky", "Darn" -> "Beans")
 
 class Text(val words:String) 
@@ -25,6 +30,6 @@ class NiceText(override val words:String) extends Text(words) with Censor {
 	def censored = censorText(this.words)
 }
 
-val text1 = new NiceText("Oh Shoot I hurt my Darn foot") 
+val text1 = new NiceText(lines) 
 
 println(text1.censored)
