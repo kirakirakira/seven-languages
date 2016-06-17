@@ -1,0 +1,2 @@
+module Main (mapColoring) where
+    
